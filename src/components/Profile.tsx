@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { FaXTwitter } from "react-icons/fa6";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import {
     Card,
@@ -12,20 +11,22 @@ import { Button } from "@/components/ui/button";
 const socials = [
     {
         name: "Github",
-        link: "https://github.com/achris-alonzo30",
+        username: "M4verickFr",
+        href: "https://github.com/M4verickFr",
         icon: <FaGithub className="size-4" />
     },
     {
         name: "LinkedIn",
-        link: "https://linkedin.com/in/lonzochris",
+        username: "maverick-perrollaz",
+        href: "https://linkedin.com/in/maverick-perrollaz",
         icon: <FaLinkedin className="size-4" />
     },
     {
-        name: "X (Twitter)",
-        link: "https://x.com/lonz_chris",
-        icon: <FaXTwitter className="size-4" />
+        name: "Mail",
+        username: "maverick.perrollaz@pm.me",
+        href: "mailto:maverick.perrollaz@pm.me",
+        icon: <FaEnvelope className="size-4" />
     }
-    // TODO: Add more socials here
 ]
 
 export const Profile = () => {
@@ -38,50 +39,45 @@ export const Profile = () => {
                             width={150}
                             height={150}
                             quality={100}
-                            src="avatar.svg"
+                            src="/portfolio/avatar.jpeg"
                             alt="Profile Picture"
                             className="rounded-full size-12 md:w-full h-auto object-cover border-2"
                         />
                         <div className="flex flex-col items-start justify-center">
-                            <h1 className="font-bold md:mt-4 text-xl md:text-2xl">Chris Lonzo</h1>
+                            <h1 className="font-bold md:mt-4 text-xl md:text-2xl">Maverick Perrollaz</h1>
                             <p className="text-sm md:text-base text-muted-foreground">
-                                Solopreneur Developer
+                                Tech-savvy PhD, 3D rendering.
                             </p>
                         </div>
                     </div>
                     <p className="mt-2 text-start text-sm text-muted-foreground">
-                        I am a solopreneur developer with a passion for building products that solve real-world problems.
+                        PhD candidate specializing in 3D rendering, cloud solutions, and scalable development.
                     </p>
                     <Button className="mt-4 w-full" asChild>
-                        {/* TODO: Add resume link */}
-                        {/* or link to schedule a meeting using Calendly or Cal*/}
                         <Link
                             target="_blank"
-                            href="resume.pdf"
+                            href="/resume_FR.pdf"
                             className="font-semibold"
                         >
-                            CONTACT ME
+                            MY RESUME
                         </Link>
                     </Button>
                     <div className="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full">
-                        {socials.map((s, i) => {
-                            const parts = s.link.split('/')
-                            const username = parts[parts.length - 1]
-                            return (
+                        {socials.map(({name, username, href, icon}, i) => (
                                 <Link
                                     key={i}
-                                    href={s.link}
+                                    href={href}
                                     target="_blank"
-                                    aria-label={`${s.name} Logo`}
+                                    aria-label={`${name} Logo`}
                                     className="cursor-pointer flex items-center gap-2 group"
                                 >
-                                    {s.icon}
+                                    {icon}
                                     <p className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
                                         /{username}
                                     </p>
                                 </Link>
                             )
-                        })}
+                        )}
                     </div>
                 </div>
             </CardContent>

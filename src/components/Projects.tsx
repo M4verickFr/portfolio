@@ -7,36 +7,18 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const projects = [
     {
-        title: "E-commerce Platform",
-        description: "A full-stack e-commerce solution with React, Node.js, and MongoDB",
-        tech: "React",
-        link: "#",
-    },
-    {
-        title: "Task Management App",
-        description: "A productivity app built with React Native and Firebase",
-        tech: "React Native",
-        link: "#",
-    },
-    {
-        title: "Data Visualization Dashboard",
-        description: "An interactive dashboard using D3.js and Vue.js",
-        tech: "Vue.js",
-        link: "#",
-    },
-    {
-        title: "AI Chatbot",
-        description: "A machine learning powered chatbot using Python and TensorFlow",
-        tech: "Python",
-        link: "#",
+        title: "Web application on point clouds",
+        description: "A full-stack web app for processing, visualizing, and sharing point clouds.",
+        tech: "Javascript",
+        link: "https://atis.cloud",
     },
 ]
 
 const techColors = {
     "React": "bg-blue-500",
-    "React Native": "bg-green-500",
     "Vue.js": "bg-purple-500",
-    "Python": "bg-yellow-500",
+    "Python": "bg-green-500",
+    "Javascript": "bg-yellow-500",
 }
 
 export const Projects = () => {

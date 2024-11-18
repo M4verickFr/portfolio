@@ -16,31 +16,20 @@ import {
 } from "@/components/ui/dialog";
 
 
-interface JobImagesProps {
+interface EducationImagesProps {
     role: string;
     link: string;
     images: string[];
     duration: string;
 }
 
-export const JobImages = ({
+export const EducationImages = ({
     role,
     link,
     images,
     duration
-}: JobImagesProps) => {
+}: EducationImagesProps) => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-    if (images.length === 0) {
-        return (
-            <div className="mt-4">
-                <Link href={link} target="_blank" className="text-sm flex items-center justify-center text-blue-600 hover:underline">
-                    Visit Company Site
-                    <ExternalLink className="size-4 ml-2" />
-                </Link>
-            </div>
-        )
-    }
 
     return (
         <div className="mt-4 flex space-x-2 overflow-x-auto pb-2 w-full">
