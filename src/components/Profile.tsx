@@ -38,7 +38,7 @@ export const Profile = () => {
                             width={150}
                             height={150}
                             quality={100}
-                            src="/avatar.svg"
+                            src="avatar.svg"
                             alt="Profile Picture"
                             className="rounded-full size-12 md:w-full h-auto object-cover border-2"
                         />
